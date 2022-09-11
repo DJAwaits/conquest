@@ -2,6 +2,8 @@
 let foodAmount = 0;
 let goldAmount = 0;
 let woodAmount = 0;
+let fishAmount = 0;
+let fishIncrement = 1;
 // connection to html
 
 const farmButton = document.getElementById('farmButton');
@@ -12,15 +14,24 @@ const foodCount = document.getElementById('foodCount');
 const goldCount = document.getElementById('goldCount');
 const woodCount = document.getElementById('woodCount');
 
+const fishButton = document.getElementById('fishButton');
+const fishCount = document.getElementById('fish');
+
 // functions
+fishButton.addEventListener('click', function(){
+    fishAmount += fishIncrement;
+    fish.innerHTML = `Fish: ${fishAmount}`;
+    if (fishAmount > 0) {
+        fish.classList.remove('hidden');
+    }
+})
+
 farmButton.addEventListener('click', function(){
     foodAmount += 1;
     foodCount.innerHTML = `Food: ${foodAmount}`;
-    console.log(foodAmount);
 })
 
 mineButton.addEventListener('click', function(){
     goldAmount += 1;
-    goldCount.innerHTML = `Gold:  ${goldAmount}`;
-    console.log(goldAmount);
+    goldCount.innerHTML = `Gold: ${goldAmount}`;
 })
